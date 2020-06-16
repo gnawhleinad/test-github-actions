@@ -1,0 +1,16 @@
+name: repository-dispatch
+on:
+  repository_dispatch:
+    types: [dispatch]
+
+jobs:
+  repository-dispatch:
+    runs-on: [ubuntu-18.04]
+    timeout-minutes: 1
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        uuid=$(date +%s)
+        git checkout -b "$uuid"
+        git commit --allow-empty -m "$uuid"
+        git push -u master "$uuid"

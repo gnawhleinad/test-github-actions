@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+curl --data 'event_type=dispatch' \
+  --header "Authorization: token ${GITHUB_TOKEN}" \
+  https://api.github.com/repos/gnawhleinad/test-github-actions/dispatches
