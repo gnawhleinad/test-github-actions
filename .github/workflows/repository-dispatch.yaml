@@ -15,4 +15,4 @@ jobs:
         git config --global user.name "Daniel Hwang"
         git checkout -b "$uuid"
         git commit --allow-empty -m "$uuid"
-        git push -u master "$uuid"
+        git push -u origin "$uuid"
